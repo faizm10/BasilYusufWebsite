@@ -17,7 +17,7 @@ export default function Portfolio() {
         className="bg-purple-400 w-3/5 p-4 text-white flex flex-col justify-center items-center"
       >
         <Card className="">
-          <h2 className=" text-green-800 text-3xl font-bold">Hey There, I'm Basil Yusuf</h2>
+          <h2 className=" text-green-800 text-3xl font-bold">Hey There, I am Basil Yusuf</h2>
           <p>
             I am A Software Engineer
           </p>
