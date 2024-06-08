@@ -34,7 +34,7 @@ const ExperienceSection = () => {
           Experience
         </h2>
         <div className="space-y-4">
-          <Card className="max-w-[1000px] shadow-xl p-5">
+          <Card className="max-w-[1000px] shadow-xl p-5 bg-blue-400">
             {/* Company Image */}
             <CardHeader className="flex gap-3">
               <Image
