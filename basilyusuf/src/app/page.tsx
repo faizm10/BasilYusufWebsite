@@ -7,26 +7,41 @@ import {
   Link,
   Card,
   Button,
+  Spacer,
+  CardFooter,
+  Image,
+  CardHeader,
 } from "@nextui-org/react";
 import TwitterCard from "@/components/TwitterCard/page";
 
 export default function Portfolio() {
   return (
-    <div className="flex h-screen w-full">
-      <div
-        className="bg-purple-400 w-3/5 p-4 text-white flex flex-col justify-center items-center"
-      >
-        <Card className="">
-          <h2 className=" text-green-800 text-3xl font-bold">Hey There, I am Basil Yusuf</h2>
-          <p>
-            I am A Software Engineer
+    <div className="bg-white text-gray-700 ">
+      <main className="min-h-screen container mx-auto mt-10 flex justify-between items-center">
+        <div>
+          <h1 className="text-3xl font-bold p-2">Basil Yusuf</h1>
+
+          <p className="text-gray-700">
+            Software Engineer | DevOps Specialist | Continuous Deployment
+            Architect
           </p>
-        </Card>
-      </div>
-      <div className="bg-pink-400 w-2/5 p-4 text-white flex justify-center items-end gap-4">
-        <TwitterCard />
-        <TwitterCard />
-      </div>
+          <div className="p-4 flex gap-4 items-center">
+            <Button radius="full" className="bg-blue-800 text-white">
+              Instagram
+            </Button>
+            <Button radius="full" className="bg-blue-800 text-white">
+              Twitter
+            </Button>
+          </div>
+        </div>
+        <div>
+          <img
+            src="./images/feelingProud.svg"
+            alt="Basil Profile"
+            className="w-126 p-6 h-auto"
+          />
+        </div>
+      </main>
     </div>
   );
 }

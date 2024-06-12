@@ -1,5 +1,4 @@
 "use client";
-
 import React from "react";
 import {
   Navbar,
@@ -16,7 +15,11 @@ import {
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
-  const menuItems = ["Home", "About Me", "Experience"];
+  const menuItems = [
+    { name: "Home", emoji: "🏠", href: "/" },
+    { name: "Experience", emoji: "🧳", href: "/experience" },
+    { name: "Projects", emoji: "💻", href: "/projects" },
+  ];
 
   return (
     <Navbar
@@ -24,6 +27,11 @@ export default function App() {
       style={{
         padding: "16px",
         backgroundColor: "purple",
+        position: "fixed",
+        top: 0,
+        left: 0,
+        right: 0,
+        zIndex: 1000,
       }}
       isBordered
     >
@@ -37,38 +45,21 @@ export default function App() {
         </NavbarBrand>
       </NavbarContent>
 
+      {/* Desktop Links */}
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
-        <NavbarItem>
-          <Link href="#" className="text-white">
-            Home
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link href="#" className="text-white">
-            About Me
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link href="/experience" className="text-white">
-            Experience
-          </Link>
-        </NavbarItem>
-      </NavbarContent>
-      <NavbarContent justify="end">
-        <NavbarItem>
-          <Button
-            as={Link}
-            className="bg-blue-300 hover:bg-blue-400"
-            href="#"
-            variant="flat"
-          >
-            Resume
-          </Button>
-        </NavbarItem>
-      </NavbarContent>
-      <NavbarMenu>
         {menuItems.map((item, index) => (
-          <NavbarMenuItem key={`${item}-${index}`}>
+          <NavbarItem key={`${item.name}-${index}`}>
+            <Link href={item.href} className="text-white">
+              {item.name}
+            </Link>
+          </NavbarItem>
+        ))}
+      </NavbarContent>
+
+      {/* Mobile Menu */}
+      <NavbarMenu className="sm:hidden w-full">
+        {menuItems.map((item, index) => (
+          <NavbarMenuItem key={`${item.name}-${index}`}>
             <Link
               color={
                 index === 2
@@ -77,11 +68,11 @@ export default function App() {
                   ? "danger"
                   : "foreground"
               }
-              className="w-full"
-              href="#"
+              className="w-full flex justify-center"
+              href={item.href}
               size="lg"
             >
-              {item}
+              {item.emoji} 
             </Link>
           </NavbarMenuItem>
         ))}
