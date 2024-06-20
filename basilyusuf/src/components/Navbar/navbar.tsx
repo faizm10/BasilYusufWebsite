@@ -10,7 +10,7 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav className="navbar">
+    <nav className="navbar bg-purple-600">
       <div className="container">
         <div className="navbar-brand">
           <button className="navbar-toggle" onClick={toggleMenu} aria-label="Toggle menu">
