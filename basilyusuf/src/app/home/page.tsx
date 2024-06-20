@@ -17,7 +17,7 @@ export default function LandingPage() {
           />
         </div>
         <h1 className="p-4 text-3xl font-bold text-center">
-          Hi, I'm Basil Yusuf
+          Hi, I&apos;m Basil Yusuf
         </h1>
         <p className="text-center text-5xl font-serif">
           I am a passionate and experienced{" "}
