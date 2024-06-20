@@ -9,6 +9,7 @@ const Navbar: React.FC = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  
   return (
     <nav className="navbar bg-purple-600">
       <div className="container">
