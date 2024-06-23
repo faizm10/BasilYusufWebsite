@@ -16,8 +16,13 @@ export default function TwitterCard() {
   return (
     <Card className="max-w-[340px] bg-gray-700 rounded-lg text-white">
       <CardHeader className="justify-between">
-        <div className="flex gap-1">
-          {/* <Avatar isBordered radius="full" size="md"/> */}
+      <div className="flex gap-1">
+          <Avatar
+            isBordered
+            src="images/basiltwitter.jpeg"
+            alt="Basil Yusuf"
+            className="rounded-full w-16 h-16"
+          />
           <div className="flex flex-col gap-1 items-start justify-center">
             <h4 className="text-small font-semibold leading-none ">
               Basil Yusuf

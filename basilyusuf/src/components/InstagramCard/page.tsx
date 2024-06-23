@@ -17,7 +17,7 @@ export default function InstagramCard() {
         <div className="flex gap-1">
           <Avatar
             isBordered
-            src="images/basilinstagram.png"
+            src="images/image.png"
             alt="Basil Yusuf"
             className="rounded-full w-16 h-16"
           />

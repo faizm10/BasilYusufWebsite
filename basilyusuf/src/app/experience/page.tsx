@@ -137,7 +137,7 @@ const ExperienceSection = () => {
                   </CardHeader>
                   <Divider />
                   <CardBody>
-                    <p className="text-small text-default-500">
+                    <p className="text-small text-white">
                       {exp.duration}
                     </p>
                   </CardBody>
