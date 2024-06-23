@@ -64,10 +64,10 @@ body {
   border-bottom: 1px solid #ddd;
 }
 
-.navbar-item:hover {
-  /* background-color: #f0f0f0; */
-  color: gray
-}
+/* .navbar-item:hover {
+  background-color: #f0f0f0;
+  color: purple;
+} */
 
 @media (min-width: 769px) {
   .navbar-toggle {
