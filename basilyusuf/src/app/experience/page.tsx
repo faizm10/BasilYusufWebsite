@@ -7,6 +7,7 @@ import {
   Divider,
   Link,
   Image,
+  Chip,
 } from "@nextui-org/react";
 
 const experienceData = [
@@ -79,15 +80,7 @@ const experienceData = [
     responsibilities: [
       "GryphHacks 2022 - People's Choice Award | Frontend & Product Development",
     ],
-    skills: [
-      "Next.js",
-      "Tailwind CSS",
-      "Python",
-      "API",
-      "R Programming",
-      "JavaScript",
-      "TypeScript",
-    ],
+    skills: ["Next.js", "Tailwind CSS", "Python", "API", "TypeScript"],
     learnMoreLink: "N/A",
   },
   {
@@ -106,45 +99,44 @@ const ExperienceSection = () => {
   return (
     <>
       <div className="main">
-        <section
-          className="py-12 px-4 md:px-12 lg:px-24"
-          style={{ backgroundColor: "#fdddb7" }}
-        >
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl font-bold text-center text-gray-800 mb-10 p-4">
-              Experience
+        <section className="py-12 px-4 md:px-12 lg:px-24 bg-[#1a202c] text-white">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-4xl font-bold text-center text-gray-200 mb-10">
+              Latest Projects
             </h2>
-            <div className="space-y-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
               {experienceData.map((exp) => (
                 <Card
                   key={exp.id}
-                  className="max-w-[1000px] shadow-xl p-5 bg-blue-400"
+                  className=" bg-[#2d3748]"
+                  shadow="lg"
+                  radius="lg"
                 >
                   <CardHeader className="flex gap-3">
                     <Image
                       alt={`${exp.company} logo`}
-                      height={80}
-                      radius="md"
+                      height={50}
+                      width={50}
                       src={exp.logo}
-                      width={80}
+                      className="rounded-full"
                     />
                     <div className="flex flex-col">
-                      <p className="text-md font-semibold">{exp.role}</p>
-                      <p className="text-small text-default-500">
-                        {exp.company}
+                      <p className="text-lg font-semibold text-gray-200">
+                        {exp.role}
                       </p>
+                      <p className="text-sm text-gray-400">{exp.company}</p>
                     </div>
                   </CardHeader>
                   <Divider />
                   <CardBody>
-                    <p className="text-small text-white">
-                      {exp.duration}
-                    </p>
+                    <p className="text-gray-400">{exp.duration}</p>
                   </CardBody>
                   <Divider />
                   <CardBody>
-                    <p className="font-semibold">Responsibilities:</p>
-                    <ul className="list-disc list-inside space-y-2">
+                    <p className="font-semibold text-white-200">
+                      Responsibilities:
+                    </p>
+                    <ul className="list-disc list-inside space-y-2 text-gray-400">
                       {exp.responsibilities.map((resp, index) => (
                         <li key={index}>{resp}</li>
                       ))}
@@ -152,27 +144,34 @@ const ExperienceSection = () => {
                   </CardBody>
                   <Divider />
                   <CardBody>
-                    <p className="font-semibold">Skills Achieved:</p>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mt-4">
-                      {exp.skills.map((skill) => (
-                        <Card
-                          key={skill}
-                          className="shadow-sm p-3 text-center bg-blue-100 text-blue-800"
+                    <p className="font-semibold text-gray-200">
+                      Skills Achieved:
+                    </p>
+                    <div className="flex flex-wrap gap-2 mt-2">
+                      {exp.skills.map((skill, i) => (
+                        <Chip
+                          key={i}
+                          className="bg-green-500 text-white p-1"
+                          size="lg"
                         >
                           {skill}
-                        </Card>
+                        </Chip>
                       ))}
                     </div>
                   </CardBody>
                   <Divider />
                   <CardFooter>
-                    <Link isExternal showAnchorIcon href={exp.learnMoreLink}>
+                    <Link
+                      isExternal
+                      showAnchorIcon
+                      href={exp.learnMoreLink}
+                      className="text-blue-400"
+                    >
                       Learn more on LinkedIn
                     </Link>
                   </CardFooter>
                 </Card>
               ))}
-              <Divider className="my-4" />
             </div>
           </div>
         </section>

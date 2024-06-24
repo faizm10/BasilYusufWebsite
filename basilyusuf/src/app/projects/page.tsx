@@ -12,7 +12,6 @@ import {
 } from "@nextui-org/react";
 
 const ProjectsSection = () => {
-  // add project details here
   const projects = [
     {
       title: "DockerMake",
@@ -37,7 +36,7 @@ const ProjectsSection = () => {
     },
     {
       title: "Pitch Shifter",
-      description: "audio pitch shifter in c++",
+      description: "Audio pitch shifter in C++",
       concepts: ["Audio", "CPP", "CODEC"],
       link: "https://github.com/basilysf1709/pitch-shifterr",
       languages: ["C++"],
@@ -60,34 +59,28 @@ const ProjectsSection = () => {
   ];
 
   return (
-    <section className="py-12 px-4 md:px-12 lg:px-24 bg-white">
-      <h2 className="text-5xl font-bold mb-8 text-center">Projects</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+    <section className="py-12 px-4 md:px-12 lg:px-24 bg-gray-100">
+      <h2 className="text-5xl font-bold mb-8 text-center text-gray-800">Projects</h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {projects.map((project, index) => (
-          <Card key={index} className="border border-black">
-            <CardHeader className="font-bold text-2xl p-2">
-              <span className="box-decoration-slice text-center bg-blue-200">
-                {project.title}
-              </span>
+          <Card key={index} className="border border-gray-300 shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <CardHeader className="font-bold text-2xl p-4 bg-blue-200">
+              {project.title}
             </CardHeader>
             <Divider />
-            <CardBody>
+            <CardBody className="p-4">
               {project.description && (
-                <div>
+                <div className="mb-4">
                   <div className="font-bold text-xl mb-2">About</div>
                   <p>{project.description}</p>
                 </div>
               )}
               {project.concepts.length > 0 && (
-                <div className="mt-4">
+                <div className="mb-4">
                   <div className="font-bold text-xl mb-2">Concepts</div>
                   <div className="flex flex-wrap gap-2">
                     {project.concepts.map((concept, i) => (
-                      <Chip
-                        key={i}
-                        className="p-2 bg-orange-500 text-white"
-                        variant="dot"
-                      >
+                      <Chip key={i} className="bg-orange-500 text-white p-2">
                         {concept}
                       </Chip>
                     ))}
@@ -95,40 +88,33 @@ const ProjectsSection = () => {
                 </div>
               )}
               {project.languages.length > 0 && (
-                <div className="mt-4">
+                <div>
                   <div className="font-bold text-xl mb-2">Languages</div>
                   <div className="flex flex-wrap gap-2">
-                    {project.languages.map((languages, i) => (
-                      <Chip
-                        key={i}
-                        className="p-2 bg-pink-500 text-white"
-                        variant="dot"
-                      >
-                        {languages}
+                    {project.languages.map((language, i) => (
+                      <Chip key={i} className="bg-pink-500 text-white p-2">
+                        {language}
                       </Chip>
                     ))}
                   </div>
                 </div>
               )}
             </CardBody>
-            <CardFooter className="text-center">
-              <Link
-                href={project.link}
-                target="_blank"
-                className=" hover:text-blue-500"
-              >
+            <Divider />
+            <CardFooter className="p-4 text-center">
+              <Link href={project.link} target="_blank" className="text-blue-500 hover:underline">
                 View Project on GitHub
               </Link>
             </CardFooter>
           </Card>
         ))}
       </div>
-      <Spacer />
-      <div className="p-2 text-2xl text-center  hover:text-blue-500">
+      <Spacer y={2} />
+      <div className="text-center">
         <Button
           radius="full"
           size="lg"
-          className="p-3 bg-gradient-to-tr from-pink-500 to-yellow-500 text-white shadow-lg"
+          className="p-3 bg-gradient-to-tr from-pink-500 to-yellow-500 text-white shadow-lg hover:shadow-xl transition-shadow duration-300"
           href="https://github.com/basilysf1709?tab=repositories"
           as={Link}
         >
