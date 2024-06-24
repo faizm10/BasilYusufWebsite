@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import React, { useState } from "react";
 import "./Navbar.css";
 
@@ -9,20 +9,29 @@ const Navbar: React.FC = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  
   return (
     <nav className="navbar bg-purple-600">
       <div className="container">
         <div className="navbar-brand">
-          <button className="navbar-toggle" onClick={toggleMenu} aria-label="Toggle menu">
+          <button
+            className="navbar-toggle"
+            onClick={toggleMenu}
+            aria-label="Toggle menu"
+          >
             ☰
           </button>
           <span className="brand-name">Basil</span>
         </div>
         <div className={`navbar-menu ${isMenuOpen ? "active" : ""}`}>
-          <a href="/home" className="navbar-item hover:text-black">Home</a>
-          <a href="/experience" className="navbar-item hover:text-black">Experience</a>
-          <a href="/projects" className="navbar-item hover:text-black">Projects</a>
+          <a href="/home" className="navbar-item hover:text-black">
+            Home
+          </a>
+          <a href="/experience" className="navbar-item hover:text-black">
+            Experience
+          </a>
+          <a href="/projects" className="navbar-item hover:text-black">
+            Projects
+          </a>
         </div>
       </div>
     </nav>

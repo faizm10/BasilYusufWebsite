@@ -99,11 +99,13 @@ const ExperienceSection = () => {
   return (
     <>
       <div className="main">
-        <section className="py-12 px-4 md:px-12 lg:px-24 bg-[#1a202c] text-white">
+        {/* <section className="py-12 px-4 md:px-12 lg:px-24 bg-[#1a202c] text-white"> */}
+        <section className="py-12 px-4 md:px-12 lg:px-24 bg-white text-white">
+
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-4xl font-bold text-center text-gray-200 mb-10">
-              Latest Projects
-            </h2>
+            {/* <h2 className="text-4xl font-bold text-center text-gray-200 mb-10"> */}
+            <h2 className="text-5xl font-bold mb-8 text-center text-gray-800">Experience</h2>
+
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
               {experienceData.map((exp) => (
                 <Card
