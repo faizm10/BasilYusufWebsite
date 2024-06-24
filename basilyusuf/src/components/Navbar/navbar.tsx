@@ -20,9 +20,9 @@ const Navbar: React.FC = () => {
           <span className="brand-name">Basil</span>
         </div>
         <div className={`navbar-menu ${isMenuOpen ? "active" : ""}`}>
-          <a href="/home" className="navbar-item hover:text-purple-600">Home</a>
-          <a href="/experience" className="navbar-item hover:text-purple-600">Experience</a>
-          <a href="/projects" className="navbar-item hover:text-purple-600">Projects</a>
+          <a href="/home" className="navbar-item hover:text-black">Home</a>
+          <a href="/experience" className="navbar-item hover:text-black">Experience</a>
+          <a href="/projects" className="navbar-item hover:text-black">Projects</a>
         </div>
       </div>
     </nav>
