@@ -22,7 +22,7 @@ const Navbar: React.FC = () => {
           </button>
           <span className="brand-name">Basil</span>
         </div>
-        <div className={`navbar-menu ${isMenuOpen ? "active" : ""}`}>
+        <div className={`navbar-menu bg-purple-600 ${isMenuOpen ? "active" : ""} justify-end `}>
           <a href="/home" className="navbar-item hover:text-black">
             Home
           </a>

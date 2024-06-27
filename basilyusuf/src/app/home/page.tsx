@@ -1,10 +1,16 @@
 "use client";
 import React from "react";
-import TwitterCard from "@/components/TwitterCard/page";
-import GitHubCard from "@/components/GithubCard/page";
-import InstagramCard from "@/components/InstagramCard/page";
-import LinkedInCard from "@/components/LinkedinCard/page";
 
+
+
+import { FaLinkedinIn } from "react-icons/fa";
+
+import {
+  AiFillGithub,
+  AiOutlineTwitter,
+  AiFillInstagram,
+  
+} from "react-icons/ai";
 export default function LandingPage() {
   return (
     <>
@@ -29,26 +35,52 @@ export default function LandingPage() {
           Development
         </p>
         <p className="text-gray-600 p-5 font-semibold text-xl text-center max-w-2xl mt-4">
-          Software Engineer | DevOps Specialist | Continuous Deployment Architect
+          Software Engineer | DevOps Specialist | Continuous Deployment
+          Architect
         </p>
+        <div className="flex align-middle justify-center gap-5 mt-8">
+          <a
+            href="https://github.com/basilysf1709"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <AiFillGithub
+              size={40}
+              className="transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110  duration-300 ..."
+            />
+          </a>
+          <a
+            href="https://twitter.com/basilysf1709"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <AiOutlineTwitter
+              size={40}
+              className="transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110  duration-300 ..."
+            />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/basilysf1709/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaLinkedinIn
+              size={40}
+              className="transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110  duration-300 ..."
+            />
+          </a>
+          <a
+            href="https://www.instagram.com/basilysf1709/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <AiFillInstagram
+              size={40}
+              className="transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110  duration-300 ..."
+            />
+          </a>
+        </div>
       </div>
-      {/* <h1 className="text-center font-serif font-semibold text-4xl p-6 text-gray-800">
-        Follow Me On Social Media
-      </h1> */}
-      {/* <div className="p-4 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-center align-middle bg-gradient-to-b from-gray-100 to-gray-200">
-        <div className="col-span-1 md:col-span-3 lg:col-span-1">
-          <TwitterCard />
-        </div>
-        <div className="col-span-1 md:col-span-3 lg:col-span-1">
-          <GitHubCard />
-        </div>
-        <div className="col-span-1 md:col-span-3 lg:col-span-1">
-          <InstagramCard />
-        </div>
-        <div className="col-span-1 md:col-span-3 lg:col-span-1">
-          <LinkedInCard />
-        </div>
-      </div> */}
     </>
   );
 }

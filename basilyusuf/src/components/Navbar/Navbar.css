@@ -66,6 +66,7 @@ body {
   color: #ffffff;
   padding: 0.5rem 1rem;
   border-bottom: 1px solid #ddd;
+  
 }
 
 @media (min-width: 769px) {
@@ -95,6 +96,6 @@ body {
 
   .navbar-menu {
     flex-direction: column;
-    background-color: purple;
+    background-color: "bg-purple-800";
   }
 }

@@ -97,88 +97,66 @@ const experienceData = [
 
 const ExperienceSection = () => {
   return (
-    <>
-      <div className="main">
-        {/* <section className="py-12 px-4 md:px-12 lg:px-24 bg-[#1a202c] text-white"> */}
-        <section className="py-12 px-4 md:px-12 lg:px-24 bg-white text-white">
-
-          <div className="max-w-6xl mx-auto">
-            {/* <h2 className="text-4xl font-bold text-center text-gray-200 mb-10"> */}
-            <h2 className="text-5xl font-bold mb-8 text-center text-gray-800">Experience</h2>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
-              {experienceData.map((exp) => (
-                <Card
-                  key={exp.id}
-                  className=" bg-[#2d3748]"
-                  shadow="lg"
-                  radius="lg"
-                >
-                  <CardHeader className="flex gap-3">
-                    <Image
-                      alt={`${exp.company} logo`}
-                      height={50}
-                      width={50}
-                      src={exp.logo}
-                      className="rounded-full"
-                    />
-                    <div className="flex flex-col">
-                      <p className="text-lg font-semibold text-gray-200">
-                        {exp.role}
-                      </p>
-                      <p className="text-sm text-gray-400">{exp.company}</p>
-                    </div>
-                  </CardHeader>
-                  <Divider />
-                  <CardBody>
-                    <p className="text-gray-400">{exp.duration}</p>
-                  </CardBody>
-                  <Divider />
-                  <CardBody>
-                    <p className="font-semibold text-white-200">
-                      Responsibilities:
-                    </p>
-                    <ul className="list-disc list-inside space-y-2 text-gray-400">
-                      {exp.responsibilities.map((resp, index) => (
-                        <li key={index}>{resp}</li>
-                      ))}
-                    </ul>
-                  </CardBody>
-                  <Divider />
-                  <CardBody>
-                    <p className="font-semibold text-gray-200">
-                      Skills Achieved:
-                    </p>
-                    <div className="flex flex-wrap gap-2 mt-2">
-                      {exp.skills.map((skill, i) => (
-                        <Chip
-                          key={i}
-                          className="bg-green-500 text-white p-1"
-                          size="lg"
-                        >
-                          {skill}
-                        </Chip>
-                      ))}
-                    </div>
-                  </CardBody>
-                  <Divider />
-                  <CardFooter>
-                    <Link
-                      isExternal
-                      showAnchorIcon
-                      href={exp.learnMoreLink}
-                      className="text-blue-400"
-                    >
-                      Learn more on LinkedIn
-                    </Link>
-                  </CardFooter>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </section>
+    <section className="py-12 px-4 md:px-12 lg:px-24 bg-gray-100">
+      <h2 className="text-5xl font-bold mb-8 text-center text-gray-800">
+        Experience
+      </h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {experienceData.map((exp, index) => (
+          <Card
+            key={exp.id}
+            className="border border-gray-300 shadow-lg hover:shadow-xl transition-shadow duration-300"
+          >
+            <CardHeader className="flex gap-3 font-bold text-2xl p-4 bg-blue-200 text-gray-800">
+              <Image
+                alt={`${exp.company} logo`}
+                height={50}
+                width={50}
+                src={exp.logo}
+                className="rounded-full"
+              />
+              <div className="flex flex-col">
+                <span>{exp.role}</span>
+                <span className="text-sm text-gray-400">{exp.company}</span>
+              </div>
+            </CardHeader>
+            <Divider />
+            <CardBody className="p-4">
+              <p className="text-gray-600">{exp.duration}</p>
+              <div className="mt-4">
+                <div className="font-bold text-xl mb-2">Responsibilities:</div>
+                <ul className="list-disc list-inside space-y-2 text-gray-600">
+                  {exp.responsibilities.map((resp, index) => (
+                    <li key={index}>{resp}</li>
+                  ))}
+                </ul>
+              </div>
+              <div className="mt-4">
+                <div className="font-bold text-xl mb-2">Skills Achieved:</div>
+                <div className="flex flex-wrap gap-2">
+                  {exp.skills.map((skill, i) => (
+                    <Chip key={i} className="bg-green-500 text-white p-2">
+                      {skill}
+                    </Chip>
+                  ))}
+                </div>
+              </div>
+            </CardBody>
+            <Divider />
+            <CardFooter className="p-4 text-center">
+              {/* <Link isExternal showAnchorIcon href={exp.learnMoreLink} className="text-blue-500 hover:underline"> */}
+              <Link
+                isExternal
+                href={exp.learnMoreLink}
+                className="text-blue-500 hover:underline"
+              >
+                Learn more on LinkedIn
+              </Link>
+            </CardFooter>
+          </Card>
+        ))}
       </div>
-    </>
+    </section>
   );
 };
 
