@@ -1,3 +1,4 @@
+/* styles/Navbar.css */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -24,10 +25,15 @@ body {
   align-items: center;
 }
 
+.brand-container {
+  display: flex;
+  align-items: center;
+  space-x-5: space-between;
+}
+
 .brand-name {
   font-weight: bold;
   font-size: 1.5rem;
-  margin-left: 0.5rem;
   color: white;
 }
 
@@ -66,7 +72,15 @@ body {
   color: #ffffff;
   padding: 0.5rem 1rem;
   border-bottom: 1px solid #ddd;
-  
+}
+
+.theme-switch {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 2rem; /* Increase the font size for a larger button */
+  padding: 0.5rem;
 }
 
 @media (min-width: 769px) {
@@ -87,6 +101,10 @@ body {
   .navbar-item {
     border-bottom: none;
   }
+
+  .navbar-theme-switch {
+    margin-left: auto;
+  }
 }
 
 @media (max-width: 768px) {
@@ -96,6 +114,6 @@ body {
 
   .navbar-menu {
     flex-direction: column;
-    background-color: "bg-purple-800";
+    background-color: #4c1d95; /* Tailwind purple-800 */
   }
 }

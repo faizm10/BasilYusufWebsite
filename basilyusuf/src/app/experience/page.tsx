@@ -97,17 +97,17 @@ const experienceData = [
 
 const ExperienceSection = () => {
   return (
-    <section className="py-12 px-4 md:px-12 lg:px-24 bg-gray-100">
-      <h2 className="text-5xl font-bold mb-8 text-center text-gray-800">
+    <section className="py-12 px-4 md:px-12 lg:px-24 bg-gray-100 dark:bg-gray-900">
+      <h2 className="text-5xl font-bold mb-8 text-center text-gray-800 dark:text-gray-100">
         Experience
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {experienceData.map((exp, index) => (
           <Card
             key={exp.id}
-            className="border border-gray-300 shadow-lg hover:shadow-xl transition-shadow duration-300"
+            className="border border-gray-300 dark:border-gray-700 dark:bg-white shadow-lg hover:shadow-xl transition-shadow duration-300"
           >
-            <CardHeader className="flex gap-3 font-bold text-2xl p-4 bg-blue-200 text-gray-800">
+            <CardHeader className="flex gap-3 font-bold text-2xl p-4 bg-blue-200 dark:bg-blue-200 text-gray-800 dark:text-gray-100">
               <Image
                 alt={`${exp.company} logo`}
                 height={50}
@@ -116,23 +116,29 @@ const ExperienceSection = () => {
                 className="rounded-full"
               />
               <div className="flex flex-col">
-                <span>{exp.role}</span>
-                <span className="text-sm text-gray-400">{exp.company}</span>
+                <span className=" dark:text-black">{exp.role}</span>
+                <span className="text-sm text-gray-400 dark:text-gray-500">
+                  {exp.company}
+                </span>
               </div>
             </CardHeader>
             <Divider />
             <CardBody className="p-4">
-              <p className="text-gray-600">{exp.duration}</p>
+              <p className="text-gray-600 dark:text-gray-600">{exp.duration}</p>
               <div className="mt-4">
-                <div className="font-bold text-xl mb-2">Responsibilities:</div>
-                <ul className="list-disc list-inside space-y-2 text-gray-600">
+                <div className="font-bold text-xl mb-2 dark:text-black">
+                  Responsibilities:
+                </div>
+                <ul className="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-600">
                   {exp.responsibilities.map((resp, index) => (
                     <li key={index}>{resp}</li>
                   ))}
                 </ul>
               </div>
               <div className="mt-4">
-                <div className="font-bold text-xl mb-2">Skills Achieved:</div>
+                <div className="font-bold text-xl mb-2 dark:text-black">
+                  Skills Achieved:
+                </div>
                 <div className="flex flex-wrap gap-2">
                   {exp.skills.map((skill, i) => (
                     <Chip key={i} className="bg-green-500 text-white p-2">
@@ -144,7 +150,6 @@ const ExperienceSection = () => {
             </CardBody>
             <Divider />
             <CardFooter className="p-4 text-center">
-              {/* <Link isExternal showAnchorIcon href={exp.learnMoreLink} className="text-blue-500 hover:underline"> */}
               <Link
                 isExternal
                 href={exp.learnMoreLink}

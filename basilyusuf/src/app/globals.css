@@ -17,6 +17,25 @@
 } */
 /* styles.css */
 
+/* Tailwind CSS file or index.css */
+body {
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark {
+  background-color: #1a1a1a;
+  color: #e0e0e0;
+}
+
+.icon {
+  color: #000000;
+  /* Set icon color to black */
+}
+
+.dark .icon {
+  color: #ffffff;
+  /* Set icon color to white in dark mode */
+}
 
 /* styles.css */
 .animated-image-container {
@@ -24,12 +43,19 @@
 }
 
 @keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
+
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
     transform: translateY(0);
   }
+
   40% {
     transform: translateY(-20px);
   }
+
   60% {
     transform: translateY(-10px);
   }
@@ -45,6 +71,7 @@
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }

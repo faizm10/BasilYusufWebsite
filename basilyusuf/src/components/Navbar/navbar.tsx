@@ -1,5 +1,7 @@
+// components/Navbar.tsx
 "use client";
 import React, { useState } from "react";
+import ThemeSwitch from "../ThemeContext/page";
 import "./Navbar.css";
 
 const Navbar: React.FC = () => {
@@ -20,9 +22,14 @@ const Navbar: React.FC = () => {
           >
             ☰
           </button>
-          <span className="brand-name">Basil</span>
+          <div className="brand-container flex items-center space-x-5">
+            <span className="brand-name">Basil</span>
+            <ThemeSwitch />
+          </div>
         </div>
-        <div className={`navbar-menu bg-purple-600 ${isMenuOpen ? "active" : ""} justify-end `}>
+        <div
+          className={`navbar-menu ${isMenuOpen ? "active" : ""} justify-end`}
+        >
           <a href="/home" className="navbar-item hover:text-black">
             Home
           </a>
@@ -32,6 +39,9 @@ const Navbar: React.FC = () => {
           <a href="/projects" className="navbar-item hover:text-black">
             Projects
           </a>
+          {/* <div className="brand-name">
+            <ThemeSwitch />
+          </div> */}
         </div>
       </div>
     </nav>

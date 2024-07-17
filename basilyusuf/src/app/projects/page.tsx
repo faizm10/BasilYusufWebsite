@@ -59,12 +59,12 @@ const ProjectsSection = () => {
   ];
 
   return (
-    <section className="py-12 px-4 md:px-12 lg:px-24 bg-gray-100">
-      <h2 className="text-5xl font-bold mb-8 text-center text-gray-800">Projects</h2>
+    <section className="py-12 px-4 md:px-12 lg:px-24 bg-gray-100 dark:bg-gray-900">
+      <h2 className="text-5xl font-bold mb-8 text-center text-gray-800 dark:text-white">Projects</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {projects.map((project, index) => (
-          <Card key={index} className="border border-gray-300 shadow-lg hover:shadow-xl transition-shadow duration-300">
-            <CardHeader className="font-bold text-2xl p-4 bg-blue-200">
+          <Card key={index} className="border border-gray-300 shadow-lg hover:shadow-xl transition-shadow duration-300 dark:border-none">
+            <CardHeader className="font-bold text-2xl p-4 bg-blue-200 dark:bg-blue-200 dark:text-black">
               {project.title}
             </CardHeader>
             <Divider />
