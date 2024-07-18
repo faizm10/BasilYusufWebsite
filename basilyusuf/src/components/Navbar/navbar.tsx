@@ -22,13 +22,11 @@ const Navbar: React.FC = () => {
           >
             ☰
           </button>
-          <div className="brand-container flex items-center space-x-5">
-            <span className="brand-name">Basil</span>
-            <ThemeSwitch />
-          </div>
+
+          <span className="brand-name">Basil</span>
         </div>
         <div
-          className={`navbar-menu ${isMenuOpen ? "active" : ""} justify-end`}
+          className={`navbar-menu ${isMenuOpen ? "active" : ""} justify-center`}
         >
           <a href="/home" className="navbar-item hover:text-black">
             Home
@@ -39,9 +37,9 @@ const Navbar: React.FC = () => {
           <a href="/projects" className="navbar-item hover:text-black">
             Projects
           </a>
-          {/* <div className="brand-name">
-            <ThemeSwitch />
-          </div> */}
+        </div>
+        <div className="justify-end">
+          <ThemeSwitch />
         </div>
       </div>
     </nav>

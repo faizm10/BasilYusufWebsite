@@ -60,10 +60,15 @@ const ProjectsSection = () => {
 
   return (
     <section className="py-12 px-4 md:px-12 lg:px-24 bg-gray-100 dark:bg-gray-900">
-      <h2 className="text-5xl font-bold mb-8 text-center text-gray-800 dark:text-white">Projects</h2>
+      <h2 className="text-5xl font-bold mb-8 text-center text-gray-800 dark:text-white">
+        Projects
+      </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {projects.map((project, index) => (
-          <Card key={index} className="border border-gray-300 shadow-lg hover:shadow-xl transition-shadow duration-300 dark:border-none">
+          <Card
+            key={index}
+            className="border border-gray-300 dark:bg-white shadow-lg hover:shadow-xl transition-shadow duration-300 dark:border-none"
+          >
             <CardHeader className="font-bold text-2xl p-4 bg-blue-200 dark:bg-blue-200 dark:text-black">
               {project.title}
             </CardHeader>
@@ -71,13 +76,17 @@ const ProjectsSection = () => {
             <CardBody className="p-4">
               {project.description && (
                 <div className="mb-4">
-                  <div className="font-bold text-xl mb-2">About</div>
-                  <p>{project.description}</p>
+                  <div className="font-bold text-xl mb-2 dark:text-black">
+                    About
+                  </div>
+                  <p className="dark:text-black">{project.description}</p>
                 </div>
               )}
               {project.concepts.length > 0 && (
                 <div className="mb-4">
-                  <div className="font-bold text-xl mb-2">Concepts</div>
+                  <div className="font-bold text-xl mb-2 dark:text-black">
+                    Concepts
+                  </div>
                   <div className="flex flex-wrap gap-2">
                     {project.concepts.map((concept, i) => (
                       <Chip key={i} className="bg-orange-500 text-white p-2">
@@ -89,7 +98,9 @@ const ProjectsSection = () => {
               )}
               {project.languages.length > 0 && (
                 <div>
-                  <div className="font-bold text-xl mb-2">Languages</div>
+                  <div className="font-bold text-xl mb-2  dark:text-black">
+                    Languages
+                  </div>
                   <div className="flex flex-wrap gap-2">
                     {project.languages.map((language, i) => (
                       <Chip key={i} className="bg-pink-500 text-white p-2">
@@ -102,7 +113,11 @@ const ProjectsSection = () => {
             </CardBody>
             <Divider />
             <CardFooter className="p-4 text-center">
-              <Link href={project.link} target="_blank" className="text-blue-500 hover:underline">
+              <Link
+                href={project.link}
+                target="_blank"
+                className="text-blue-500 hover:underline"
+              >
                 View Project on GitHub
               </Link>
             </CardFooter>

@@ -28,7 +28,7 @@ body {
 .brand-container {
   display: flex;
   align-items: center;
-  space-x-5: space-between;
+  /* space-x-5: space-between; */
 }
 
 .brand-name {
